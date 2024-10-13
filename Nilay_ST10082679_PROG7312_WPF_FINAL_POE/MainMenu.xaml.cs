@@ -31,6 +31,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             rep.Show();
             this.Close();
         }
+        //--------------------------------------------------------------------------------------//
+        // Button to go to the Local Events and Announcements Page
+        private void BtnLocalEventsAndAnnouncements_Click(object sender, RoutedEventArgs e)
+        {
+            LocalEvents local = new LocalEvents();
+            local.Show();
+            this.Close();
+        }
     }
 }
 //---------------------------------End of FIle-----------------------------------------------------//

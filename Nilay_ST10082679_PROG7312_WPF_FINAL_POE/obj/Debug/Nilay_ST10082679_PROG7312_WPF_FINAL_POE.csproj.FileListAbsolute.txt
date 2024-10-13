@@ -17,3 +17,5 @@ C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG73
 C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\obj\Debug\ReportIssues.baml
 C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\obj\Debug\ReportList.g.cs
 C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\obj\Debug\ReportList.baml
+C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\obj\Debug\LocalEvents.g.cs
+C:\Users\Aero\Documents\Visual Studio 2022\2024_Projects\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\Nilay_ST10082679_PROG7312_WPF_FINAL_POE\obj\Debug\LocalEvents.baml

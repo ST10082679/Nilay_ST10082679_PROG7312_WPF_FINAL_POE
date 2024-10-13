@@ -32,9 +32,9 @@
                 Padding="10"
                 Margin="0,0,0,10"
                 BorderThickness="2"
-                BorderBrush="White"
+                BorderBrush="Blue"
                 Click="BtnReportIssues_Click" 
-                Background="#FF6A737D" FontSize="16" FontWeight="Bold"/>
+                Background="LightSkyBlue" FontSize="16" FontWeight="Bold"/>
 
         <Button x:Name="BtnLocalEventsAndAnnouncements" Content="Local Events and Announcements"
                 Grid.Row="2" Grid.Column="1"
@@ -42,18 +42,17 @@
                 Padding="10"
                 Margin="0,0,0,10"
                 BorderThickness="2"
-                Background="#FF6A737D"
-                BorderBrush="White"
-                IsEnabled="False"
-                Width="Auto" FontSize="16" FontWeight="Bold"/>
+                Background="LightSkyBlue"
+                BorderBrush="Blue"
+                Width="Auto" FontSize="16" FontWeight="Bold" Click="BtnLocalEventsAndAnnouncements_Click"/>
 
-        <Button x:Name="BtnServiceRequestStatus" Content="Service Request Status"
+        <Button x:Name="BtnServiceRequestStatus" Content="Service Request Status (coming soon)"
                 Grid.Row="3" Grid.Column="1"
                 VerticalAlignment="Center"
                 Padding="10"
                 BorderThickness="2"
-                BorderBrush="White"
-                Background="#FF6A737D"
+                BorderBrush="Blue"
+                Background="LightSkyBlue"
                 IsEnabled="False"
                 Width="Auto" FontSize="16" FontWeight="Bold"/>
     </Grid>

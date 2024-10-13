@@ -1,0 +1,62 @@
+﻿<Window x:Class="Nilay_ST10082679_PROG7312_WPF_FINAL_POE.LocalEvents"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Nilay_ST10082679_PROG7312_WPF_FINAL_POE"
+        mc:Ignorable="d"
+        Title="LocalEvents" Height="900" Width="1000">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF7BB4CC" Offset="1"/>
+                <GradientStop Color="White" Offset="1"/>
+                <GradientStop Color="#FFFFC6C1" Offset="0.033"/>
+                <GradientStop Color="#FF61A3BF" Offset="0.994"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <!-- Heading -->
+        <Label x:Name="lblHeading" Content="Local Events and Announcements" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Margin="0,10,0,0"/>
+
+        <!-- Unique Categories Section -->
+        <Label x:Name="lblUniqueCategories" Content="Unique Categories:" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="727,260,0,0"/>
+        <ListBox x:Name="listBoxUniqueCategories" Width="277" Height="123" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="674,294,0,0" SelectionChanged="listBoxUniqueCategories_SelectionChanged" Background="#FFC4CCDE"/>
+
+        <!-- Search Controls -->
+        <Label x:Name="lblSearchByCategory" Content="Search by Category:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,50,0,0" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="txtSearchByCategory" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,50,0,0" Background="#FFC4CCDE"/>
+
+        <Label x:Name="lblSearchByDate" Content="Search by Date:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,90,0,0" FontWeight="Bold" FontSize="14"/>
+        <DatePicker x:Name="dateTimePickerSearchByDate" Width="200" Height="25" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="161,90,0,0" Background="#FFC4CCDE" />
+
+        <!-- Search Button -->
+        <Button Content="Search" Name="btnSearch" Width="80" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="420,84,0,0" BorderBrush="Black" Background="#FF87D2DC" Click="btnSearch_Click" FontWeight="Bold" FontSize="14" />
+
+        <!-- Events Display (Scrollable) -->
+        <Label x:Name="lblEvents" Content="Events:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="277,260,0,0" FontWeight="Bold" FontSize="18"/>
+        <ScrollViewer x:Name="eventsScroll" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled" Margin="25,294,375,257" Background="#FFC4CCDE">
+            <StackPanel x:Name="stackPanelEvents" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top"  />
+        </ScrollViewer>
+
+
+
+        <!-- Recommended Events Section -->
+        <Label x:Name="lblRecommendedEvents" Content="Recommended Events:" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="246,656,0,0"/>
+        <DataGrid x:Name="dataGridRecommendedEvents" Width="625" Height="145" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,690,0,0" Background="#FFC4CCDE" AutoGenerateColumns="False" CanUserAddRows="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name" Binding="{Binding Name}" Width="150"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding Description}" Width="200"/>
+                <DataGridTextColumn Header="Date" Binding="{Binding Date, StringFormat=yyyy-MM-dd}" Width="100"/>
+                <DataGridTextColumn Header="Duration" Binding="{Binding Duration}" Width="80"/>
+                <DataGridTextColumn Header="Category" Binding="{Binding Category}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Top 5 Searches Section -->
+        <Label x:Name="lblTopSearches" Content="Top 5 Searches:" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,137,0,0"/>
+        <ListBox x:Name="listBoxTopSearches" Width="585" Height="63" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,171,0,0" Background="#FFC4CCDE"/>
+
+        <!-- Back to Main Menu Button -->
+        <Button x:Name="btnBackToMainMenu" Content="Back To Main Menu" HorizontalAlignment="Left" Margin="819,738,0,0" VerticalAlignment="Top" Height="41" Width="132" BorderBrush="Black" Background="#FF87D2DC" Click="btnBackToMainMenu_Click" FontWeight="Bold"/>
+    </Grid>
+</Window>

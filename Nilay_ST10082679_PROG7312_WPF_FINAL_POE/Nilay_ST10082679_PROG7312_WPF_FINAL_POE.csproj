@@ -56,6 +56,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="DataProvider.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="EventsData.cs" />
+    <Compile Include="LocalEvents.xaml.cs">
+      <DependentUpon>LocalEvents.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ReportIssue.cs" />
     <Compile Include="ReportIssues.xaml.cs">
       <DependentUpon>ReportIssues.xaml</DependentUpon>
@@ -63,6 +68,10 @@
     <Compile Include="ReportList.xaml.cs">
       <DependentUpon>ReportList.xaml</DependentUpon>
     </Compile>
+    <Page Include="LocalEvents.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
