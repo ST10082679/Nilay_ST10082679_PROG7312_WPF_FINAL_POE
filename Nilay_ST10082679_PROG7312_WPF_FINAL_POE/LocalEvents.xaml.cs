@@ -24,14 +24,15 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         {
             InitializeComponent();
             eventsData = new EventsData();
-            DisplayAllEvents();
-            DisplayRecommendedEvents();
-            DisplayTopSearches();
-            ShowUniqueCategories();
+            RenderAllEvents();
+            RenderRecommendedEvents();
+            RenderTopSearches();
+            RenderUniqueCategories();
+            this.ResizeMode = ResizeMode.NoResize;
         }
         //--------------------------------------------------------------------------------------//
-        // Method to display all events
-        public void DisplayAllEvents()
+        // Method to render all events
+        public void RenderAllEvents()
         {
             stackPanelEvents.Children.Clear();
 
@@ -46,7 +47,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
                         Padding = new Thickness(10),
-                        Margin = new Thickness(60, 10, 0, 0),
+                        Margin = new Thickness(45, 10, 0, 0),
                         Background = Brushes.LightBlue
 
                     };
@@ -60,7 +61,6 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                     eventDetails.Children.Add(new TextBlock { Text = $"Date and Time: {e.Date:yyyy-MM-dd HH:mm:ss}" });
                     eventDetails.Children.Add(new TextBlock { Text = $"Duration: {e.Duration}" });
 
-                    // Add the StackPanel to the Border
                     eventBorder.Child = eventDetails;
 
                     // Add the event card to the StackPanel
@@ -79,7 +79,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
                 List<Event> events = new List<Event>();
 
-                // Case 1: Both category and date are specified
+                //Both category and date are specified (with substring search)
                 if (!string.IsNullOrWhiteSpace(category) && selectedDate.HasValue)
                 {
                     foreach (var eventQueue in eventsData.eventsDictionary)
@@ -93,26 +93,26 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                         }
                     }
                 }
-                // Case 2: Only category is specified (with substring search)
+                //Only category is specified (with substring search)
                 else if (!string.IsNullOrWhiteSpace(category))
                 {
                     foreach (var eventQueue in eventsData.eventsDictionary)
                     {
                         foreach (var ev in eventQueue.Value)
                         {
-                            if (ev.Category.IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0) // Substring search
+                            if (ev.Category.IndexOf(category, StringComparison.OrdinalIgnoreCase) >= 0) 
                             {
                                 events.Add(ev);
                             }
                         }
                     }
                 }
-                // Case 3: Only date is specified
+                //Only date is specified
                 else if (selectedDate.HasValue)
                 {
                     events = eventsData.SearchByDate(selectedDate.Value);
                 }
-                // Case 4: Neither category nor date is specified, show all events
+                //If category and date is not specified then show all events
                 else
                 {
                     foreach (var eventQueue in eventsData.eventsDictionary)
@@ -124,10 +124,10 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                     }
                 }
 
-                // Clear the existing events from the StackPanel
+                // Clears the existing events from the StackPanel
                 stackPanelEvents.Children.Clear();
 
-                // Display the search results
+                // Displays the search results
                 foreach (var ev in events)
                 {
                     // Create a Border for each event
@@ -137,11 +137,10 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
                         Padding = new Thickness(10),
-                        Margin = new Thickness(60, 10, 0, 0),
+                        Margin = new Thickness(45, 10, 0, 0),
                         Background = Brushes.LightBlue
                     };
 
-                    // Create a StackPanel for event details
                     StackPanel eventDetails = new StackPanel { Orientation = Orientation.Vertical };
 
                     // Add the event details to the StackPanel
@@ -168,8 +167,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                     eventsData.UpdateSearchFrequency(selectedDate.Value.ToShortDateString());
                 }
 
-                DisplayRecommendedEvents();
-                DisplayTopSearches();
+                RenderRecommendedEvents();
+                RenderTopSearches();
             }
             catch (Exception ex)
             {
@@ -177,8 +176,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
-        // Method to display the recommended events
-        private void DisplayRecommendedEvents()
+        // Method to render the recommended events
+        private void RenderRecommendedEvents()
         {
             try { 
             List<Event> recommendedEvents = new List<Event>();
@@ -217,8 +216,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
-        // Method to display the top searches
-        private void DisplayTopSearches()
+        // Method to render the top 5 searches
+        private void RenderTopSearches()
         {
             try
             {
@@ -228,7 +227,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                                                     .Select(pair => $"{pair.Key} (Searched {pair.Value} times)")
                                                     .ToList();
 
-                // Display top searches
+                // render top searches
                 listBoxTopSearches.Items.Clear();
                 foreach (var searchTerm in topSearchTerms)
                 {
@@ -242,7 +241,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
         //--------------------------------------------------------------------------------------//
         // Method to display the unique categories
-        private void ShowUniqueCategories()
+        private void RenderUniqueCategories()
         {
             listBoxUniqueCategories.Items.Clear();
             foreach (var category in eventsData.uniqueCategoriesSet)
