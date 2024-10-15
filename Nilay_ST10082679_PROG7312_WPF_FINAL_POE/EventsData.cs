@@ -8,7 +8,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 {
     public class EventsData
     {
-        // Dictionary to store events by date
+        // SortedDictionary that maps a DateTime (key) to a Queue of Event objects (value)
         public SortedDictionary<DateTime, Queue<Event>> eventsDictionary = new SortedDictionary<DateTime, Queue<Event>>();
         // HashSet to store unique categories
         public HashSet<string> uniqueCategoriesSet = new HashSet<string>();

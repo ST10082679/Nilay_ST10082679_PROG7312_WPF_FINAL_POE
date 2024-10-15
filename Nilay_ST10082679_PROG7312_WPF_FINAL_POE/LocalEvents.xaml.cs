@@ -28,7 +28,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             RenderRecommendedEvents();
             RenderTopSearches();
             RenderUniqueCategories();
-            this.ResizeMode = ResizeMode.NoResize;
+            this.SizeChanged += LocalEventWindow_SizeChanged;
         }
         //--------------------------------------------------------------------------------------//
         // Method to render all events
@@ -40,18 +40,16 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             {
                 foreach (var e in eventQueue)
                 {
-                    // Create a Border to represent the card
                     Border eventBorder = new Border
                     {
                         BorderBrush = Brushes.Gray,
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
                         Padding = new Thickness(10),
-                        Margin = new Thickness(45, 10, 0, 0),
-                        Background = Brushes.LightBlue
-
+                        Margin = new Thickness(0, 10, 0, 0),
+                        Background = Brushes.LightBlue,
                     };
-
+                 
                     // Create a StackPanel to hold event details
                     StackPanel eventDetails = new StackPanel { Orientation = Orientation.Vertical };
                    
@@ -76,7 +74,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             {
                 string category = txtSearchByCategory.Text;
                 DateTime? selectedDate = dateTimePickerSearchByDate.SelectedDate;
-
+                
                 List<Event> events = new List<Event>();
 
                 //Both category and date are specified (with substring search)
@@ -130,14 +128,13 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 // Displays the search results
                 foreach (var ev in events)
                 {
-                    // Create a Border for each event
                     Border eventBorder = new Border
                     {
                         BorderBrush = Brushes.Gray,
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
                         Padding = new Thickness(10),
-                        Margin = new Thickness(45, 10, 0, 0),
+                        Margin = new Thickness(0, 10, 0, 0),
                         Background = Brushes.LightBlue
                     };
 
@@ -183,10 +180,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             List<Event> recommendedEvents = new List<Event>();
 
             // Sort search terms by frequency and pick top 5
-            var topSearchTerms = eventsData.searchFrequency.OrderByDescending(pair => pair.Value)
-                                                .Take(5)
-                                                .Select(pair => pair.Key)
-                                                .ToList();
+            var topSearchTerms = eventsData.searchFrequency.OrderByDescending(pair => pair.Value).Take(5).Select(pair => pair.Key).ToList();
 
             foreach (var eventQueue in eventsData.eventsDictionary)
             {
@@ -216,16 +210,13 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
-        // Method to render the top 5 searches
+        // Method to render the top  searches
         private void RenderTopSearches()
         {
             try
             {
                 // Sort search terms by frequency and display top 5
-                var topSearchTerms = eventsData.searchFrequency.OrderByDescending(pair => pair.Value)
-                                                    .Take(5)
-                                                    .Select(pair => $"{pair.Key} (Searched {pair.Value} times)")
-                                                    .ToList();
+                var topSearchTerms = eventsData.searchFrequency.OrderByDescending(pair => pair.Value).Take(5).Select(pair => $"{pair.Key} (Searched {pair.Value} times)").ToList();
 
                 // render top searches
                 listBoxTopSearches.Items.Clear();
@@ -240,7 +231,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
-        // Method to display the unique categories
+        // Method to render the unique categories
         private void RenderUniqueCategories()
         {
             listBoxUniqueCategories.Items.Clear();
@@ -264,6 +255,32 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             if (listBoxUniqueCategories.SelectedItem != null)
             {
                 txtSearchByCategory.Text = listBoxUniqueCategories.SelectedItem.ToString();
+            }
+        }
+        //--------------------------------------------------------------------------------------//
+        //Method for resizing 
+        private void LocalEventWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (this.ActualWidth < 992)
+            {
+                // Single column layout when width < 500px
+                FirstColumn.Width = new GridLength(1, GridUnitType.Star);
+                SecondColumn.Width = new GridLength(0); 
+                Grid.SetColumnSpan(lblHeading, 1);
+                lblHeading.FontSize = 16;
+                lblHeading.Margin = new Thickness(150, 0, 0, 0);
+                Grid.SetColumn(stackPanelRight, 0); 
+                Grid.SetRow(stackPanelRight, 5);
+            }
+            else
+            {
+                FirstColumn.Width = new GridLength(334, GridUnitType.Star);
+                SecondColumn.Width = new GridLength(191, GridUnitType.Star);
+                Grid.SetColumnSpan(lblHeading, 2);
+                lblHeading.FontSize = 20;
+                lblHeading.Margin = new Thickness(364, 0, 0, 0);
+                Grid.SetColumn(stackPanelRight, 1);
+                Grid.SetRow(stackPanelRight, 1);
             }
         }
     }
