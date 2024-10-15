@@ -35,13 +35,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         public void RenderAllEvents()
         {
             stackPanelEvents.Children.Clear();
-
+            // Loop through the events dictionary and display each event
             foreach (var eventQueue in eventsData.eventsDictionary.Values)
             {
                 foreach (var e in eventQueue)
                 {
                     Border eventBorder = new Border
                     {
+                        // Set the border properties
                         BorderBrush = Brushes.Gray,
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
@@ -71,7 +72,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
+            {              
                 string category = txtSearchByCategory.Text;
                 DateTime? selectedDate = dateTimePickerSearchByDate.SelectedDate;
                 
@@ -94,6 +95,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 //Only category is specified (with substring search)
                 else if (!string.IsNullOrWhiteSpace(category))
                 {
+                    // Search for events by category
                     foreach (var eventQueue in eventsData.eventsDictionary)
                     {
                         foreach (var ev in eventQueue.Value)
@@ -121,7 +123,6 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                         }
                     }
                 }
-
                 // Clears the existing events from the StackPanel
                 stackPanelEvents.Children.Clear();
 
@@ -130,6 +131,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 {
                     Border eventBorder = new Border
                     {
+                        // Set the border properties
                         BorderBrush = Brushes.Gray,
                         BorderThickness = new Thickness(1),
                         CornerRadius = new CornerRadius(10),
@@ -169,6 +171,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
             catch (Exception ex)
             {
+                // Display error message
                 MessageBox.Show(ex.Message, "Oops an error. Please restart application", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -181,20 +184,21 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             // Sort search terms by frequency and pick top 5
             var topSearchTerms = eventsData.searchFrequency.OrderByDescending(pair => pair.Value).Take(5).Select(pair => pair.Key).ToList();
-
+            // Find events that match the top search terms
             foreach (var eventQueue in eventsData.eventsDictionary)
             {
                 foreach (var ev in eventQueue.Value)
                 {
                     foreach (var searchTerm in topSearchTerms)
                     {
+                            // If the event category or date matches the search term, add it to the recommended events list
                         if (ev.Category.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
                             ev.Date.ToShortDateString().Equals(searchTerm))
-                        {
+                        {                               
                             if (recommendedEvents.Count < 5)
                             {
                                 recommendedEvents.Add(ev);
-                            }
+                            }                           
                             break; 
                         }
                     }
@@ -206,6 +210,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
             catch (Exception ex)
             {
+                // Display error message
                 MessageBox.Show(ex.Message, "Oops an error occurred when displaying recommended events. Please restart application", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -227,6 +232,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
             catch (Exception ex)
             {
+                // Display error message
                 MessageBox.Show(ex.Message, "Oops an error occurred when displaying top searches. Please restart application", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
@@ -244,6 +250,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         // Button to go back to the Main Menu
         private void btnBackToMainMenu_Click(object sender, RoutedEventArgs e)
         {
+            // Navigate to the Main Menu
             MainMenu main = new MainMenu();
             main.Show();
             this.Close();
@@ -252,6 +259,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         // Method to display the events of the selected category
         private void listBoxUniqueCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            // Display the selected category in the search box
             if (listBoxUniqueCategories.SelectedItem != null)
             {
                 txtSearchByCategory.Text = listBoxUniqueCategories.SelectedItem.ToString();
@@ -261,9 +269,10 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         //Method for resizing 
         private void LocalEventWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            // Check the width of the window
             if (this.ActualWidth < 992)
             {
-                // Single column layout when width < 500px
+                // Set the column width and row for the elements
                 FirstColumn.Width = new GridLength(1, GridUnitType.Star);
                 SecondColumn.Width = new GridLength(0); 
                 Grid.SetColumnSpan(lblHeading, 1);
