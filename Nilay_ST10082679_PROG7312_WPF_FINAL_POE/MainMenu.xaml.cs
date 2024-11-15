@@ -39,6 +39,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             local.Show();
             this.Close();
         }
+        //--------------------------------------------------------------------------------------//
+        // Button to go to the Service Request Status Page
+        private void BtnServiceRequestStatus_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceRequestStatus service = new ServiceRequestStatus();
+            service.Show();
+            this.Close();
+        }
     }
 }
 //---------------------------------End of FIle-----------------------------------------------------//

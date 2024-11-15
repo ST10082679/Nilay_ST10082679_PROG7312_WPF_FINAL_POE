@@ -46,14 +46,13 @@
                 BorderBrush="Blue"
                 Width="Auto" FontSize="16" FontWeight="Bold" Click="BtnLocalEventsAndAnnouncements_Click"/>
 
-        <Button x:Name="BtnServiceRequestStatus" Content="Service Request Status (coming soon)"
+        <Button x:Name="BtnServiceRequestStatus" Content="Service Request Status"
                 Grid.Row="3" Grid.Column="1"
                 VerticalAlignment="Center"
                 Padding="10"
                 BorderThickness="2"
                 BorderBrush="Blue"
                 Background="LightSkyBlue"
-                IsEnabled="False"
-                Width="Auto" FontSize="16" FontWeight="Bold"/>
+                Width="Auto" FontSize="16" FontWeight="Bold" Click="BtnServiceRequestStatus_Click"/>
     </Grid>
 </Window>

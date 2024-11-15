@@ -55,18 +55,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AVLNode.cs" />
+    <Compile Include="AVLTree.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventsData.cs" />
     <Compile Include="LocalEvents.xaml.cs">
       <DependentUpon>LocalEvents.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MinHeap.cs" />
     <Compile Include="ReportIssue.cs" />
     <Compile Include="ReportIssues.xaml.cs">
       <DependentUpon>ReportIssues.xaml</DependentUpon>
     </Compile>
     <Compile Include="ReportList.xaml.cs">
       <DependentUpon>ReportList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceRequest.cs" />
+    <Compile Include="ServiceRequestGraph.cs" />
+    <Compile Include="ServiceRequestNode.cs" />
+    <Compile Include="ServiceRequestStatus.xaml.cs">
+      <DependentUpon>ServiceRequestStatus.xaml</DependentUpon>
     </Compile>
     <Page Include="LocalEvents.xaml">
       <SubType>Designer</SubType>
@@ -88,6 +97,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ReportList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ServiceRequestStatus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
