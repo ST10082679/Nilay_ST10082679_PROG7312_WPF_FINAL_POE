@@ -9,11 +9,11 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
     using System;
     using System.Collections.Generic;
 
-    public class ServiceRequestGraph
+    public class ServiceRequestGraphLocation
     {
         private Dictionary<ServiceRequest, List<ServiceRequest>> adjacencyList;
 
-        public ServiceRequestGraph()
+        public ServiceRequestGraphLocation()
         {
             adjacencyList = new Dictionary<ServiceRequest, List<ServiceRequest>>();
         }

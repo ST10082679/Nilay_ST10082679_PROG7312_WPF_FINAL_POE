@@ -55,33 +55,37 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AVLNode.cs" />
-    <Compile Include="AVLTree.cs" />
-    <Compile Include="DataProvider.cs" />
-    <Compile Include="Event.cs" />
-    <Compile Include="EventsData.cs" />
-    <Compile Include="LocalEvents.xaml.cs">
+    <Compile Include="Data\AvlTree\AVLNode.cs" />
+    <Compile Include="Data\AvlTree\AVLTree.cs" />
+    <Compile Include="Data\DataProvider.cs" />
+    <Compile Include="Models\Event.cs" />
+    <Compile Include="Data\EventsData.cs" />
+    <Compile Include="Views\LocalEvents.xaml.cs">
       <DependentUpon>LocalEvents.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MinHeap.cs" />
-    <Compile Include="ReportIssue.cs" />
-    <Compile Include="ReportIssues.xaml.cs">
+    <Compile Include="Controllers\LocalEventsController.cs" />
+    <Compile Include="Data\MinHeap\MinHeap.cs" />
+    <Compile Include="Models\ReportIssue.cs" />
+    <Compile Include="Views\ReportIssues.xaml.cs">
       <DependentUpon>ReportIssues.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ReportList.xaml.cs">
+    <Compile Include="Controllers\ReportIssuesController.cs" />
+    <Compile Include="Views\ReportList.xaml.cs">
       <DependentUpon>ReportList.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ServiceRequest.cs" />
-    <Compile Include="ServiceRequestGraph.cs" />
-    <Compile Include="ServiceRequestNode.cs" />
-    <Compile Include="ServiceRequestStatus.xaml.cs">
+    <Compile Include="Models\ServiceRequest.cs" />
+    <Compile Include="Data\GraphLocation\ServiceRequestGraphLocation.cs" />
+    <Compile Include="Data\GraphStatus\ServiceRequestGraphNode.cs" />
+    <Compile Include="Data\GraphStatus\ServiceRequestGraphStatus.cs" />
+    <Compile Include="Views\ServiceRequestStatus.xaml.cs">
       <DependentUpon>ServiceRequestStatus.xaml</DependentUpon>
     </Compile>
-    <Page Include="LocalEvents.xaml">
+    <Compile Include="Controllers\ServiceRequestStatusController.cs" />
+    <Page Include="Views\LocalEvents.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainMenu.xaml">
+    <Page Include="Views\MainMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -89,18 +93,18 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainMenu.xaml.cs">
+    <Compile Include="Views\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
-    <Page Include="ReportIssues.xaml">
+    <Page Include="Views\ReportIssues.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ReportList.xaml">
+    <Page Include="Views\ReportList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ServiceRequestStatus.xaml">
+    <Page Include="Views\ServiceRequestStatus.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,7 +136,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="MainMenuImage.jpg" />
+    <Resource Include="Assets\MainMenuImage.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\BImage.jpg" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
