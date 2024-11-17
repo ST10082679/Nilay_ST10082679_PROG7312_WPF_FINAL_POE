@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 {
@@ -30,34 +31,34 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             // Sample data insertion
             // Generated from chat 
             // The UUID is auto generated and the rest of the data is random
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 12, "Thabo Mokoena"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 34, "Nokuthula Sithole"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 45, "Linda Zulu"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 78, "John Nkosi"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "In Progress", 22, "Alice Dlamini"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 15, "Jane Mbatha"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Langenhoven Park, Bloemfontein", "Pending", 56, "Siphiwe Khumalo"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sterpark, Polokwane", "In Progress", 89, "Mandla Ndlovu"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Cashan, Rustenburg", "Completed", 14, "Precious Mthethwa"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Green Point, Cape Town", "Pending", 33, "Zanele Mabuza"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Melville, Johannesburg", "In Progress", 67, "Kgomotso Moloi"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Dobsonville, Soweto", "Completed", 81, "Kabelo Baloyi"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Pending", 3, "Dumisani Magubane"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Morningside, Durban", "In Progress", 19, "Lerato Mkhize"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 91, "Sipho Dlomo"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sonheuwel, Nelspruit", "Pending", 48, "Busi Mhlongo"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Heather Park, George", "In Progress", 25, "Thuli Ngcobo"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "Completed", 5, "Andile Mbali"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Monument Heights, Kimberley", "Pending", 84, "Phumzile Masuku"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Three Rivers, Vereeniging", "In Progress", 66, "Tshepo Luthuli"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Glenwood, Durban", "Completed", 73, "Mpho Radebe"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 20, "Gugu Sibeko"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Nahoon, East London", "In Progress", 35, "Jabulani Hadebe"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "Completed", 92, "Sindi Mtshali"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "Pending", 50, "Mbali Zwide"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 1, "Thandiwe Mthembu"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 2, "Sanele Mthembu"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 6, "Sipho Mthembu"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 12, "Fix drainage"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 34, "Repair potholes"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 45, "Clean park"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 78, "Install streetlights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "In Progress", 22, "Repair water pipeline"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 15, "Trim overgrown trees"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Langenhoven Park, Bloemfontein", "Pending", 56, "Clear blocked sewer"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sterpark, Polokwane", "In Progress", 89, "Repair electrical outage"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Cashan, Rustenburg", "Completed", 14, "Remove illegal dumping"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Green Point, Cape Town", "Pending", 33, "Repair road signage"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Melville, Johannesburg", "In Progress", 67, "Install speed bumps"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Dobsonville, Soweto", "Completed", 81, "Fix streetlights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Pending", 3, "Repair stormwater drain"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Morningside, Durban", "In Progress", 19, "Clean illegal graffiti"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 91, "Replace manhole covers"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sonheuwel, Nelspruit", "Pending", 48, "Remove fallen tree"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Heather Park, George", "In Progress", 25, "Fix broken water main"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "Completed", 5, "Repair park benches"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Monument Heights, Kimberley", "Pending", 84, "Fix public restroom plumbing"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Three Rivers, Vereeniging", "In Progress", 66, "Replace damaged curb"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Glenwood, Durban", "Completed", 73, "Clean up flooding debris"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 20, "Repair broken traffic light"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Nahoon, East London", "In Progress", 35, "Install new waste bins"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "Completed", 92, "Fix playground equipment"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "Pending", 50, "Fix municipal building leak"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 1, "Repair stormwater drain"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 2, "Fix streetlights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 6, "Repair potholes"));
         }
         //--------------------------------------------------------------------------------------//
         public void InsertRequest(ServiceRequest request)
