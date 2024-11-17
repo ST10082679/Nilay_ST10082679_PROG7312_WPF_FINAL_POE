@@ -47,7 +47,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             {// Check if the search text box is empty
                 if (txtSearch.Text == "")
                 {
-                    MessageBox.Show("Please enter a valid UUID to search for.", "Input Required", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Please enter a valid or partial UUID to search for.", "Input Required", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
                 // Clear the stack panel
