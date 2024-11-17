@@ -9,7 +9,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
     public partial class LocalEvents : Window
     {
         private LocalEventsController controller;
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public LocalEvents()
         {
             InitializeComponent();
@@ -20,7 +21,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             RenderUniqueCategories();
             this.SizeChanged += LocalEventWindow_SizeChanged;
         }
-
+        //--------------------------------------------------------------------------------------//
         // Render all events
         public void RenderAllEvents()
         {
@@ -31,12 +32,13 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 AddEventToStackPanel(e, stackPanelEvents);
             }
         }
-
-        // Search for events
+        //--------------------------------------------------------------------------------------//
+        // Method to search for events
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
             {
+                // Get the search criteria
                 string category = txtSearchByCategory.Text;
                 DateTime? selectedDate = dateTimePickerSearchByDate.SelectedDate;
 
@@ -56,8 +58,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        // Render recommended events
+        //--------------------------------------------------------------------------------------//
+        // Method to render recommended events
         private void RenderRecommendedEvents()
         {
             try
@@ -70,7 +72,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         // Render top searches
         private void RenderTopSearches()
         {
@@ -88,7 +90,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         // Render unique categories
         private void RenderUniqueCategories()
         {
@@ -99,7 +101,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 listBoxUniqueCategories.Items.Add(category);
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         // Navigate back to the Main Menu
         private void btnBackToMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -107,7 +109,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             main.Show();
             this.Close();
         }
-
+        //--------------------------------------------------------------------------------------//
         // Display events of the selected category
         private void listBoxUniqueCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -116,10 +118,11 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 txtSearchByCategory.Text = listBoxUniqueCategories.SelectedItem.ToString();
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         // Resize event handler
         private void LocalEventWindow_SizeChanged(object sender, SizeChangedEventArgs e)
         {
+            // Adjust the layout based on the window size
             if (this.ActualWidth < 992)
             {
                 FirstColumn.Width = new GridLength(1, GridUnitType.Star);
@@ -141,7 +144,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 Grid.SetRow(stackPanelRight, 1);
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         // Helper method to add events to the stack panel
         private void AddEventToStackPanel(Event ev, StackPanel panel)
         {
@@ -154,17 +157,18 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 Margin = new Thickness(0, 10, 0, 0),
                 Background = Brushes.LightBlue
             };
-
+            // Create a stack panel to hold the event details
             StackPanel eventDetails = new StackPanel { Orientation = Orientation.Vertical };
-
+            // Add the event details to the StackPanel
             eventDetails.Children.Add(new TextBlock { Text = $"Name: {ev.Name}", FontWeight = FontWeights.Bold });
             eventDetails.Children.Add(new TextBlock { Text = $"Description: {ev.Description}" });
             eventDetails.Children.Add(new TextBlock { Text = $"Category: {ev.Category}" });
             eventDetails.Children.Add(new TextBlock { Text = $"Date and Time: {ev.Date:yyyy-MM-dd HH:mm:ss}" });
             eventDetails.Children.Add(new TextBlock { Text = $"Duration: {ev.Duration}" });
-
+            // Add the StackPanel to the Border
             eventBorder.Child = eventDetails;
             panel.Children.Add(eventBorder);
         }
     }
 }
+//---------------------------------End of FIle-----------------------------------------------------//

@@ -6,13 +6,15 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
     {
         public List<string> SelectedFiles { get; private set; }
         public int Progress { get; private set; }
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public ReportIssuesController()
         {
             SelectedFiles = new List<string>();
             Progress = 0;
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Method to validate the report
         public bool ValidateReport(string description, string location, int selectedCategoryIndex, out string errorText)
         {
             errorText = "";
@@ -44,12 +46,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             return !hasErrors;
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Method to add attachments
         public void AddAttachments(IEnumerable<string> files)
         {
             SelectedFiles.AddRange(files);
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Method to calculate the progress
         public void CalculateProgress(string description, string location, int selectedCategoryIndex)
         {
             Progress = 0;
@@ -73,6 +77,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             {
                 Progress += 25;
             }
-        }
+        }       
     }
 }
+//---------------------------------End of FIle-----------------------------------------------------//

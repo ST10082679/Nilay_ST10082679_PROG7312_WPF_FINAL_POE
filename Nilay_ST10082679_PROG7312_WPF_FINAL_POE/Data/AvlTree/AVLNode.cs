@@ -12,7 +12,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         public AVLNode Left { get; set; }
         public AVLNode Right { get; set; }
         public int Height { get; set; }
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public AVLNode(ServiceRequest data)
         {
             Data = data;
@@ -22,3 +23,4 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
     }
 }
+//---------------------------------End of FIle-----------------------------------------------------//

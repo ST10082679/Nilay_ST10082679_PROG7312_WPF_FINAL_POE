@@ -12,19 +12,20 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
     public class ServiceRequestGraphLocation
     {
         private Dictionary<ServiceRequest, List<ServiceRequest>> adjacencyList;
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public ServiceRequestGraphLocation()
         {
             adjacencyList = new Dictionary<ServiceRequest, List<ServiceRequest>>();
         }
-
+        //--------------------------------------------------------------------------------------//
         // Add a service request node to the graph
         public void AddRequest(ServiceRequest request)
         {
             if (!adjacencyList.ContainsKey(request))
                 adjacencyList[request] = new List<ServiceRequest>();
         }
-
+        //--------------------------------------------------------------------------------------//
         // Add an edge between two requests (relationship)
         public void AddRelationship(ServiceRequest request1, ServiceRequest request2)
         {
@@ -34,15 +35,15 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 AddRequest(request2);
 
             adjacencyList[request1].Add(request2);
-            adjacencyList[request2].Add(request1); // Undirected relationship; remove if directed
+            adjacencyList[request2].Add(request1); 
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Get all service requests
         public List<ServiceRequest> GetAllRequests()
         {
             return new List<ServiceRequest>(adjacencyList.Keys);
         }
-
-
+        //--------------------------------------------------------------------------------------//
         // Get related service requests
         public List<ServiceRequest> GetRelatedRequests(ServiceRequest request)
         {
@@ -51,13 +52,13 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             return new List<ServiceRequest>();
         }
-
-        // Example graph traversal (e.g., Depth-First Search)
+        //--------------------------------------------------------------------------------------//
+        // Trasverse the graph using Depth First Search starting from the specified request
         public void Traverse(ServiceRequest startRequest, HashSet<ServiceRequest> visited = null)
         {
             if (visited == null)
                 visited = new HashSet<ServiceRequest>();
-
+            // If the current request has not been visited, process it
             if (!visited.Contains(startRequest))
             {
                 Console.WriteLine("Visited: " + startRequest.UUID);
@@ -70,5 +71,5 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
     }
-
 }
+//---------------------------------End of FIle-----------------------------------------------------//

@@ -22,6 +22,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         public ReportList()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             // Display the data in the DataGrid
             DashboardDataGrid.ItemsSource = DataProvider.ReportIssues;
         }

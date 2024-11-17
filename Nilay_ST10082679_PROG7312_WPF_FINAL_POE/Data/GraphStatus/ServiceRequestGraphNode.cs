@@ -11,7 +11,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         public string Status { get; set; }
         public List<ServiceRequest> Requests { get; set; }
         public List<ServiceRequestGraphNode> Neighbors { get; set; }
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public ServiceRequestGraphNode(string status)
         {
             Status = status;
@@ -20,3 +21,4 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
     }
 }
+//---------------------------------End of FIle-----------------------------------------------------//

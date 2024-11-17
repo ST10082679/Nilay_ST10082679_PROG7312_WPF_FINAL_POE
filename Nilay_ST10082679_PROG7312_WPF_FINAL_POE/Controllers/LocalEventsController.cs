@@ -9,13 +9,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
     public class LocalEventsController
     {
         private EventsData eventsData;
-
+        //--------------------------------------------------------------------------------------//
+        // Constructor
         public LocalEventsController()
         {
             eventsData = new EventsData();
         }
-
-        // Fetch all events
+        //--------------------------------------------------------------------------------------//
+        // Add event
         public List<Event> GetAllEvents()
         {
             var events = new List<Event>();
@@ -25,7 +26,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
             return events;
         }
-
+        //--------------------------------------------------------------------------------------//
         // Search events by category and/or date
         public List<Event> SearchEvents(string category, DateTime? selectedDate)
         {
@@ -78,7 +79,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             return events;
         }
-
+        //--------------------------------------------------------------------------------------//
         // Get recommended events
         public List<Event> GetRecommendedEvents()
         {
@@ -88,7 +89,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 .Take(5)
                 .Select(pair => pair.Key)
                 .ToList();
-
+            
             foreach (var eventQueue in eventsData.eventsDictionary)
             {
                 foreach (var ev in eventQueue.Value)
@@ -110,7 +111,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             return recommendedEvents;
         }
-
+        //--------------------------------------------------------------------------------------//
         // Get top search terms
         public List<string> GetTopSearches()
         {
@@ -120,7 +121,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 .Select(pair => $"{pair.Key} (Searched {pair.Value} times)")
                 .ToList();
         }
-
+        //--------------------------------------------------------------------------------------//
         // Get unique categories
         public List<string> GetUniqueCategories()
         {
@@ -128,3 +129,4 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
     }
 }
+//---------------------------------End of FIle-----------------------------------------------------//

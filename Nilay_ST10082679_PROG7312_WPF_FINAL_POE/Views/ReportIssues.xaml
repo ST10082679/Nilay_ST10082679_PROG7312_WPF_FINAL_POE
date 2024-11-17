@@ -5,56 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Nilay_ST10082679_PROG7312_WPF_FINAL_POE"
         mc:Ignorable="d"
-        Title="ReportIssues" Height="550" Width="1000">
+        Title="ReportIssues" Height="583" Width="1059">
 
-    <Viewbox Stretch="Uniform" OpacityMask="#FFCE6A6A">
-        <Grid Width="1062" Height="568">
-            <Grid.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7BB4CC" Offset="1"/>
-                    <GradientStop Color="White" Offset="1"/>
-                    <GradientStop Color="#FFFFC6C1" Offset="0.033"/>
-                    <GradientStop Color="#FF61A3BF" Offset="0.994"/>
-                </LinearGradientBrush>
-            </Grid.Background>
 
-            <TextBox x:Name="TxtLocation" HorizontalAlignment="Left" Margin="171,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" TextChanged="TxtLocation_TextChanged" Height="32" BorderBrush="Black" Background="#FFC4CCDE"/>
-            <Label x:Name="LblLocation" Content="Location:" HorizontalAlignment="Left" Margin="97,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.039,0.541" Foreground="Black" FontWeight="Bold"/>
-            <Label x:Name="LblCategorySelection" Content="Category Selection:" HorizontalAlignment="Left" Margin="43,187,0,0" VerticalAlignment="Top"  Foreground="Black" FontWeight="Bold"/>
-            <Label x:Name="LblDescription" Content="Description:" HorizontalAlignment="Left" Margin="82,302,0,0" VerticalAlignment="Top"  Foreground="Black" FontWeight="Bold"/>
+    <Grid Margin="0,0,-20,-16">
+        <Grid.Background>
+            <ImageBrush ImageSource="/Assets/BImage.jpg"/>
+        </Grid.Background>
 
-            <RichTextBox x:Name="RichTxtDescription" Margin="169,264,387,181" TextChanged="RichTxtDescription_TextChanged" BorderBrush="Black" Background="#FFC4CCDE">
-                <FlowDocument>
-                    <Paragraph>
-                        <Run Text=""/>
-                    </Paragraph>
-                </FlowDocument>
-            </RichTextBox>
+        <TextBox x:Name="TxtLocation" HorizontalAlignment="Left" Margin="171,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="157" TextChanged="TxtLocation_TextChanged" Height="32" BorderBrush="Black" Background="DarkGray" />
+        <Label x:Name="LblLocation" Content="Location:" HorizontalAlignment="Left" Margin="97,103,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.039,0.541" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="LblCategorySelection" Content="Category Selection:" HorizontalAlignment="Left" Margin="43,187,0,0" VerticalAlignment="Top"  Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="LblDescription" Content="Description:" HorizontalAlignment="Left" Margin="82,302,0,0" VerticalAlignment="Top"  Foreground="White" FontWeight="Bold"/>
 
-            <ListBox x:Name="ListBoxCategorySelection" Margin="171,175,387,316" Height="55" SelectionChanged="ListBoxCategorySelection_SelectionChanged" BorderBrush="Black" Background="#FFC4CCDE" >
-                <ListBox.Items>
-                    <ListBoxItem>Sanitation</ListBoxItem>
-                    <ListBoxItem>Roads</ListBoxItem>
-                    <ListBoxItem>Utilities</ListBoxItem>
-                    <ListBoxItem>Public Safety</ListBoxItem>
-                    <ListBoxItem>Health</ListBoxItem>
-                    <ListBoxItem>Vandalism</ListBoxItem>
-                    <ListBoxItem>Street Lighting</ListBoxItem>
-                    <ListBoxItem>Noise Disruption</ListBoxItem>
-                    <ListBoxItem>Environmental Concerns</ListBoxItem>
-                </ListBox.Items>
-            </ListBox>
+        <RichTextBox x:Name="RichTxtDescription" Margin="169,264,387,181" TextChanged="RichTxtDescription_TextChanged" BorderBrush="Blue" Background="DarkGray" >
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
 
-            <Label x:Name="LblMediaAttachment" Content="Media Attachment:" HorizontalAlignment="Left" Margin="43,429,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
-            <Button x:Name="BtnMediaAttachment" Content="Select Images/ Documents" HorizontalAlignment="Left" Margin="169,429,0,0" VerticalAlignment="Top" Width="178" BorderBrush="Black" Click="BtnMediaAttachment_Click" Height="25" Background="#FFC4CCDE"/>
-            <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="572,497,0,0" VerticalAlignment="Top" Height="44" Width="108" Click="BtnSubmit_Click" Background="#FF58B37B" BorderBrush="Black" FontWeight="Bold"/>
-            <Button x:Name="BtnBackToMainMenu" Content="Back To Main Menu" HorizontalAlignment="Left" Margin="906,507,0,0" VerticalAlignment="Top" Click="BtnBackToMainMenu_Click" Width="125" Height="34" BorderBrush="Black" Background="#FF87D2DC"/>
-            <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Height="26" Margin="119,20,0,0" VerticalAlignment="Top" Width="561" BorderThickness="2" BorderBrush="Black"/>
-            <Label x:Name="LblProgressBar" Content="Progress Bar:" HorizontalAlignment="Left" Margin="22,20,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold"/>
-            <Label x:Name="lblCounter" Content="Number of reports " HorizontalAlignment="Left" Margin="779,25,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-            <Button x:Name="BtnListOfReports" Content="List Of Submitted Reports" HorizontalAlignment="Left" Margin="779,76,0,0" VerticalAlignment="Top" Height="31" Width="160" Click="BtnListOfReports_Click" Background="#FFF5957F" BorderBrush="Black" FontWeight="Bold"/>
-            <Label x:Name="LblEncourage" Content="Help us improve. Lets get going" HorizontalAlignment="Left" Margin="285,51,0,0" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" FontSize="14"/>
-            <Label x:Name="LblAttachments" Content="No attachments selected" HorizontalAlignment="Left" Margin="171,463,0,0" VerticalAlignment="Top"/>
-        </Grid>
-    </Viewbox>
+        <ListBox x:Name="ListBoxCategorySelection" Margin="171,175,387,316" Height="55" SelectionChanged="ListBoxCategorySelection_SelectionChanged" BorderBrush="Black" Background="DarkGray" Foreground="Black">
+            <ListBox.Items>
+                <ListBoxItem>Sanitation</ListBoxItem>
+                <ListBoxItem>Roads</ListBoxItem>
+                <ListBoxItem>Utilities</ListBoxItem>
+                <ListBoxItem>Public Safety</ListBoxItem>
+                <ListBoxItem>Health</ListBoxItem>
+                <ListBoxItem>Vandalism</ListBoxItem>
+                <ListBoxItem>Street Lighting</ListBoxItem>
+                <ListBoxItem>Noise Disruption</ListBoxItem>
+                <ListBoxItem>Environmental Concerns</ListBoxItem>
+            </ListBox.Items>
+        </ListBox>
+
+        <Label x:Name="LblMediaAttachment" Content="Media Attachment:" HorizontalAlignment="Left" Margin="43,429,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" />
+        <Button x:Name="BtnMediaAttachment" Content="Select Images/ Documents" HorizontalAlignment="Left" Margin="169,429,0,0" VerticalAlignment="Top" Width="178" BorderBrush="Blue" Click="BtnMediaAttachment_Click" Height="25" Background="#FFC4CCDE"/>
+        <Button x:Name="BtnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="572,507,0,0" VerticalAlignment="Top" Height="34" Width="108" Click="BtnSubmit_Click"  Background="#FF5BA4A2"  BorderBrush="Blue" FontWeight="Bold"/>
+        <Button x:Name="BtnBackToMainMenu" Content="Back To Main Menu" HorizontalAlignment="Left" Margin="906,507,0,0" VerticalAlignment="Top" Click="BtnBackToMainMenu_Click" Width="125" Height="34" BorderBrush="Blue"  Background="#FF5BA4A2" FontWeight="Bold" />
+        <ProgressBar x:Name="ProgressBar" HorizontalAlignment="Left" Height="26" Margin="119,20,0,0" VerticalAlignment="Top" Width="561" BorderThickness="2" BorderBrush="Blue"/>
+        <Label x:Name="LblProgressBar" Content="Progress Bar:" HorizontalAlignment="Left" Margin="22,20,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold"/>
+        <Label x:Name="lblCounter" Content="Number of reports " HorizontalAlignment="Left" Margin="779,25,0,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White"/>
+        <Button x:Name="BtnListOfReports" Content="List Of Submitted Reports" HorizontalAlignment="Left" Margin="779,76,0,0" VerticalAlignment="Top" Height="31" Width="160" Click="BtnListOfReports_Click"  Background="#FF5BA4A2"  BorderBrush="Blue" FontWeight="Bold"/>
+        <Label x:Name="LblEncourage" Content="Help us improve. Lets get going" HorizontalAlignment="Left" Margin="285,51,0,0" VerticalAlignment="Top" FontStyle="Italic" FontWeight="Bold" FontSize="14" Foreground="White"/>
+        <Label x:Name="LblAttachments" Content="No attachments selected" HorizontalAlignment="Left" Margin="171,463,0,0" VerticalAlignment="Top" Foreground="White"/>
+    </Grid>
+
 </Window>

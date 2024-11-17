@@ -8,19 +8,24 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 {
     public class AVLTree
     {
+        // Constructor
         public AVLTree() 
         {
 
         }
+        //--------------------------------------------------------------------------------------//
         // Root for AVL Tree
         public AVLNode avlRoot;
+        //--------------------------------------------------------------------------------------//
+        // Insert Service Request into AVL Tree
         public void InsertServiceRequestAVL(ServiceRequest request)
         {
             avlRoot = InsertNodeAVL(avlRoot, request);
         }
-
+        //--------------------------------------------------------------------------------------//
         public AVLNode InsertNodeAVL(AVLNode node, ServiceRequest request)
         {
+            // If the current node is null, create a new node with the service request
             if (node == null)
                 return new AVLNode(request);
 
@@ -59,16 +64,20 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             return node;
         }
+        //--------------------------------------------------------------------------------------//
+        // Get the height of a node
         public int GetHeight(AVLNode node)
         {
             return node == null ? 0 : node.Height;
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Get the balance factor of a node
         public int GetBalance(AVLNode node)
         {
             return node == null ? 0 : GetHeight(node.Left) - GetHeight(node.Right);
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Right Rotate
         public AVLNode RightRotate(AVLNode y)
         {
             AVLNode x = y.Left;
@@ -76,13 +85,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             x.Right = y;
             y.Left = T2;
-
+            // Update heights of the rotated nodes
             y.Height = Math.Max(GetHeight(y.Left), GetHeight(y.Right)) + 1;
             x.Height = Math.Max(GetHeight(x.Left), GetHeight(x.Right)) + 1;
 
             return x;
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Left Rotate
         public AVLNode LeftRotate(AVLNode x)
         {
             AVLNode y = x.Right;
@@ -90,12 +100,14 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
 
             y.Left = x;
             x.Right = T2;
-
+            // Update heights of the rotated nodes
             x.Height = Math.Max(GetHeight(x.Left), GetHeight(x.Right)) + 1;
             y.Height = Math.Max(GetHeight(y.Left), GetHeight(y.Right)) + 1;
 
             return y;
         }
+        //--------------------------------------------------------------------------------------//
+        // In-Order Traversal of AVL Tree
         public void InOrderTraversalAVL(AVLNode node, Action<ServiceRequest> action)
         {
             if (node == null) return;
@@ -103,18 +115,20 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             action(node.Data);
             InOrderTraversalAVL(node.Right, action);
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Search for a service request by UUID, the UUID can be partial
         public void SearchPartialUUID(AVLNode node, string partialUUID, Action<ServiceRequest> action)
         {
             SearchPartialUUIDHelper(node, partialUUID, action);
         }
-
+        //--------------------------------------------------------------------------------------//
         private void SearchPartialUUIDHelper(AVLNode node, string partialUUID, Action<ServiceRequest> action)
         {
+            // Recursice function to search for nodes containing the partial UUID
             if (node == null)
                 return;
 
-            // If the UUID contains the substring, add it to results
+            // Checks if current nodes UUID contains the partial UUID
             if (node.Data.UUID.Contains(partialUUID))
                 action(node.Data);
 
@@ -124,4 +138,4 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
     }
 }
-
+//---------------------------------End of FIle-----------------------------------------------------//

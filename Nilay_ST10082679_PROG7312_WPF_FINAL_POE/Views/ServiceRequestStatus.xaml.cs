@@ -22,30 +22,35 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         public ServiceRequestStatusController controller;
 
         //--------------------------------------------------------------------------------------//
+        // Constructor
         public ServiceRequestStatus()
         {
             InitializeComponent();
+            this.ResizeMode = ResizeMode.NoResize;
             controller = new ServiceRequestStatusController();
             PopulateStatusComboBox();
             DisplayServiceRequestsAVL();   
         }
-
         //--------------------------------------------------------------------------------------//
+        // Method to display all service requests
         public void DisplayServiceRequestsAVL()
         {
+            // Clear the stack panel
             stackPanelServiceRequests.Children.Clear();
             controller.HandleNormalViewRequests(DisplayStackPanelForRequest);
         }
         //--------------------------------------------------------------------------------------//
+        // Button to search for a service request
         private void BtnSearch_Click(object sender, RoutedEventArgs e)
         {
             try
-            {
+            {// Check if the search text box is empty
                 if (txtSearch.Text == "")
                 {
                     MessageBox.Show("Please enter a UUID to search for.");
                     return;
                 }
+                // Clear the stack panel
                 stackPanelServiceRequests.Children.Clear();
                 controller.HandleSearchViewRequests(DisplayStackPanelForRequest, txtSearch.Text);
             }
@@ -54,8 +59,8 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 MessageBox.Show(ex.Message, "Oops an error occurred when searching for service requests. Please restart application", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
         //--------------------------------------------------------------------------------------//
+        // Method to display a service request in a StackPanel
         public void DisplayStackPanelForRequest(ServiceRequest request)
         {
             Border eventBorder = new Border
@@ -101,13 +106,15 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             stackPanelServiceRequests.Children.Add(eventBorder);
         }
         //--------------------------------------------------------------------------------------//
+        // Method to handle the button click for related service requests
         private void HandleRelatedButtonClick(ServiceRequest request)
         {
             try
-            {
+            {// Clear the stack panel
                 stackPanelServiceRequests.Children.Clear();
+                // Get the related service requests
                 var requestList = controller.GetRelatedRequests(request);
-
+                // Iterate through the list of related service requests
                 foreach (var relatedRequest in requestList)
                 {
                     DisplayStackPanelForRequest(relatedRequest);
@@ -120,6 +127,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
         }
 
         //--------------------------------------------------------------------------------------//
+        // Button to sort service requests by priority
         private void BtnSortByPriority_Click(object sender, RoutedEventArgs e)
         {
             try 
@@ -133,6 +141,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
+        // Button to get the most urgent service request
         private void BtnGetUrgent_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -146,6 +155,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
+        // Button to reset the service requests
         private void BtnReset_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -159,13 +169,15 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             }
         }
         //--------------------------------------------------------------------------------------//
+        // Button to go back to the Main Menu
         private void BtnBackToMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu menu = new MainMenu();
             menu.Show();
             this.Close();
         }
-
+        //--------------------------------------------------------------------------------------//
+        // Method to populate the status ComboBox
         private void PopulateStatusComboBox()
         {
             // Retrieve all statuses from the graph
@@ -180,18 +192,18 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                 cmbStatuses.Items.Add(status);
             }
         }
-
+        //--------------------------------------------------------------------------------------//
         private void cmbStatuses_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
+        {// Get the selected status
             string selectedStatus = cmbStatuses.SelectedItem as string;
             try
-            {
+            {// Check if a status was selected
                 if (!string.IsNullOrEmpty(selectedStatus))
                 {
                     // Perform an action with the selected status
                     stackPanelServiceRequests.Children.Clear();
                     var requestList = controller.GetRequestsForStatus(selectedStatus);
-
+                    // Iterate through the list of related service requests
                     foreach (var relatedRequest in requestList)
                     {
                         DisplayStackPanelForRequest(relatedRequest);
