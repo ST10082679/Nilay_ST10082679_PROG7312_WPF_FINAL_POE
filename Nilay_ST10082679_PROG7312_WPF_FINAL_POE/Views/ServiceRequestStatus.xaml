@@ -6,22 +6,19 @@
         xmlns:local="clr-namespace:Nilay_ST10082679_PROG7312_WPF_FINAL_POE"
         mc:Ignorable="d"
         Title="ServiceRequestStatus" Height="580" Width="800">
-    
+
     <Grid>
         <!-- Define grid rows and columns -->
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
-            <!-- Header -->
             <RowDefinition Height="Auto" MinHeight="230" />
-            <!-- Search and buttons -->
             <RowDefinition />
-            <!-- Scrollable content -->
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="131*" />
-            <ColumnDefinition Width="524*" />
-            <ColumnDefinition Width="145*" />
+            <ColumnDefinition Width="546*" />
+            <ColumnDefinition Width="123*" />
         </Grid.ColumnDefinitions>
 
         <!-- Background image -->
@@ -31,99 +28,144 @@
 
         <!-- Back to Main Menu button -->
         <Button x:Name="BtnBackToMainMenu" 
-            Content="Back to Main Menu"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Click="BtnBackToMainMenu_Click" 
-            Height="28" Width="122" 
-            BorderBrush="Blue" 
-            BorderThickness="1" 
-            FontWeight="Bold" 
-            Background="#FF5BA4A2" />
-
-        <!-- Header label -->
-        <Label Content="Service Request Status" 
-           Grid.Column="1" 
-           HorizontalAlignment="Center" 
-           VerticalAlignment="Center" 
-           Foreground="White" 
-           FontWeight="Bold" 
-           FontSize="24" Height="42" Width="264" />
-
-        <!-- Search components -->
-        <StackPanel Grid.Row="1" 
-                Orientation="Horizontal" 
-                HorizontalAlignment="Left" 
-                Margin="54,10,0,71" Grid.Column="1" Width="460">
-            <Label Content="Search for service request using UUID: " 
-               Foreground="White" 
-               FontWeight="Bold" Height="30" Width="237" />
-            <TextBox x:Name="txtSearch" 
-                 Width="143" 
-                 Height="28" 
-                 BorderBrush="Blue" 
-                 BorderThickness="1" 
-                 Background="#FFA5A2A2" />
-            <Button x:Name="BtnSearch" 
-                Content="Search" 
-                Width="55" 
-                Height="26" 
-                Margin="5,0" 
+                Content="Back to Main Menu"
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                Click="BtnBackToMainMenu_Click" 
+                Height="28" Width="122" 
                 BorderBrush="Blue" 
                 BorderThickness="1" 
                 FontWeight="Bold" 
-                Background="#FF5BA4A2" 
-                Click="BtnSearch_Click" />
+                Background="#FF5BA4A2">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <!-- Header label -->
+        <Label Content="Service Request Status" 
+               Grid.Column="1" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               Foreground="White" 
+               FontWeight="Bold" 
+               FontSize="24" Height="42" Width="264" />
+
+        <!-- Search components -->
+        <StackPanel Grid.Row="1" 
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    Margin="54,10,0,122" Grid.Column="1" Width="460">
+            <Label Content="Search for service request using UUID: " 
+                   Foreground="White" 
+                   FontWeight="Bold" Height="30" Width="237" />
+            <TextBox x:Name="txtSearch" 
+                     Width="143" 
+                     Height="28" 
+                     BorderBrush="Blue" 
+                     BorderThickness="1" 
+                     Background="#FFA5A2A2">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+            <Button x:Name="BtnSearch" 
+                    Content="Search" 
+                    Width="55" 
+                    Height="26" 
+                    Margin="5,0" 
+                    BorderBrush="Blue" 
+                    BorderThickness="1" 
+                    FontWeight="Bold" 
+                    Background="#FF5BA4A2" 
+                    Click="BtnSearch_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
 
         <!-- Action buttons -->
         <StackPanel Grid.Row="1" 
-                Orientation="Horizontal" 
-                HorizontalAlignment="Left" 
-                Margin="112,149,0,10" Grid.Column="1" Width="344">
+                    Orientation="Horizontal" 
+                    HorizontalAlignment="Left" 
+                    Margin="205,121,0,38" Grid.Column="1" Width="307">
             <Button x:Name="BtnSortByPriority" 
-                Content="View by Priority" 
-                Width="108" 
-                Height="26" 
-                Margin="5" 
-                BorderBrush="Blue" 
-                BorderThickness="1" 
-                FontWeight="Bold" 
-                Background="#FF5BA4A2" 
-                Click="BtnSortByPriority_Click" 
-                ToolTipService.InitialShowDelay="0">
+                    Content="View by Priority" 
+                    Width="108" 
+                    Height="26" 
+                    Margin="5" 
+                    BorderBrush="Blue" 
+                    BorderThickness="1" 
+                    FontWeight="Bold" 
+                    Background="#FF5BA4A2" 
+                    Click="BtnSortByPriority_Click" 
+                    ToolTipService.InitialShowDelay="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 <Button.ToolTip>
                     <ToolTip Content="Button to view service requests sorted by their priority." />
                 </Button.ToolTip>
             </Button>
 
             <Button x:Name="BtnGetUrgent" 
-                Content="Get Urgent" 
-                Width="91" 
-                Height="26" 
-                Margin="5" 
-                BorderBrush="Blue" 
-                BorderThickness="1" 
-                FontWeight="Bold" 
-                Background="#FF5BA4A2" 
-                Click="BtnGetUrgent_Click" 
-                ToolTipService.InitialShowDelay="0">
+                    Content="Get Urgent" 
+                    Width="91" 
+                    Height="26" 
+                    Margin="5" 
+                    BorderBrush="Blue" 
+                    BorderThickness="1" 
+                    FontWeight="Bold" 
+                    Background="#FF5BA4A2" 
+                    Click="BtnGetUrgent_Click" 
+                    ToolTipService.InitialShowDelay="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 <Button.ToolTip>
                     <ToolTip Content="Button to get urgent service requests." />
                 </Button.ToolTip>
             </Button>
 
             <Button x:Name="BtnReset" 
-                Content="Reset View" 
-                Width="80" 
-                Height="26" 
-                Margin="5" 
-                BorderBrush="Blue" 
-                BorderThickness="1" 
-                FontWeight="Bold" 
-                Background="#FF5BA4A2" 
-                Click="BtnReset_Click"
-                     ToolTipService.InitialShowDelay="0">
+                    Content="Reset View" 
+                    Width="80" 
+                    Height="26" 
+                    Margin="5" 
+                    BorderBrush="Blue" 
+                    BorderThickness="1" 
+                    FontWeight="Bold" 
+                    Background="#FF5BA4A2" 
+                    Click="BtnReset_Click"
+                    ToolTipService.InitialShowDelay="0">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
                 <Button.ToolTip>
                     <ToolTip Content="Button to reset the view." />
                 </Button.ToolTip>
@@ -132,19 +174,17 @@
 
         <!-- Scrollable content -->
         <ScrollViewer Grid.Row="2" Grid.Column="1" 
-                  VerticalScrollBarVisibility="Auto" 
-                  HorizontalScrollBarVisibility="Disabled" 
-                  Margin="10,10,10,10" 
-                  Background="DarkGray" 
-                  MaxHeight="200">
+                      VerticalScrollBarVisibility="Auto" 
+                      HorizontalScrollBarVisibility="Disabled" 
+                      Margin="10,10,10,10" 
+                      Background="DarkGray" 
+                      MaxHeight="200">
             <StackPanel x:Name="stackPanelServiceRequests" 
-                    Orientation="Vertical" 
-                    HorizontalAlignment="Center" />
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Center" />
         </ScrollViewer>
 
-        <ComboBox x:Name="cmbStatuses" Height="30" Margin="10,54,10,146" SelectionChanged="cmbStatuses_SelectionChanged" Grid.Row="1" Background="DarkGray"/>
-        <Label x:Name="LblComboBox" Content="Select a Status" HorizontalAlignment="Center" Margin="0,23,0,0" Grid.Row="1" VerticalAlignment="Top"  Foreground="White"/>
+        <ComboBox x:Name="cmbStatuses" Margin="54,146,386,55" SelectionChanged="cmbStatuses_SelectionChanged" Grid.Row="1" Background="DarkGray" Grid.Column="1"/>
+        <Label x:Name="LblComboBox" Content="Select a Status: " HorizontalAlignment="Left" Margin="54,115,0,0" Grid.Row="1" VerticalAlignment="Top"  Foreground="White" Grid.Column="1" Height="26" Width="96" FontWeight="Bold"/>
     </Grid>
-
-
 </Window>

@@ -47,7 +47,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             {// Check if the search text box is empty
                 if (txtSearch.Text == "")
                 {
-                    MessageBox.Show("Please enter a UUID to search for.");
+                    MessageBox.Show("Please enter a valid UUID to search for.", "Input Required", MessageBoxButton.OK, MessageBoxImage.Information);
                     return;
                 }
                 // Clear the stack panel
@@ -147,11 +147,23 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             try
             {
                 var serviceRequest = controller.GetMostUrgentRequest();
-                MessageBox.Show(serviceRequest.Priority + " " + serviceRequest.Name);
+
+                if (serviceRequest != null)
+                {
+                    // Format the details for display, including UUID
+                    string message = $"UUID: {serviceRequest.UUID}\n" +
+                                     $"Location: {serviceRequest.Location}\n" +
+                                     $"Priority: {serviceRequest.Priority}\n" +
+                                     $"Name: {serviceRequest.Name}";
+
+                    // Display the details in a message box
+                    MessageBox.Show(message, "Most Urgent Service Request", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Oops an error occurred when getting the most urgent service request. Please restart application", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show(ex.Message, "Oops an error occurred when getting the most urgent service request. Please restart the application", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
         //--------------------------------------------------------------------------------------//

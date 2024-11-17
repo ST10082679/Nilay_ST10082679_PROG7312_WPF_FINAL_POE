@@ -8,7 +8,6 @@
         SizeChanged="LocalEventWindow_SizeChanged"
         Title="LocalEvents" Height="800" Width="1200" MinWidth="600">
 
-    <!-- ScrollViewer to make the entire grid scrollable -->
     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <Grid>
             <Grid.Background>
@@ -19,7 +18,6 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition  />
-
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -31,7 +29,7 @@
             </Grid.ColumnDefinitions>
 
             <Label Grid.ColumnSpan="2" x:Name="lblHeading" Content="Local Events and Announcements" Foreground="White"
-            HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="364,0,0,0" Height="36" Width="324"/>
+                   HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Margin="364,0,0,0" Height="36" Width="324"/>
 
             <StackPanel Grid.Row="1" Grid.Column="0" Orientation="Vertical" Margin="10,0,2,10">
                 <Label x:Name="lblSearchByCategory" Content="Search by Category:" FontWeight="Bold" FontSize="14" Margin="0,0,0,10" Width="154" Foreground="White"/>
@@ -39,7 +37,15 @@
                 <Label x:Name="lblSearchByDate" Content="Search by Date:" FontWeight="Bold" FontSize="14" Margin="0,10,0,10" Width="131" Foreground="White"/>
                 <DatePicker x:Name="dateTimePickerSearchByDate" Width="200" Height="25" Background="#FFC4CCDE" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                 <Button Content="Search" Name="btnSearch" Width="80" Height="30" Margin="0,10,0,0"  
-                BorderBrush="Blue"  Background="#FF5BA4A2"  Click="btnSearch_Click" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"/>
+                        BorderBrush="Blue" Background="#FF5BA4A2" Click="btnSearch_Click" FontWeight="Bold" FontSize="14" HorizontalAlignment="Center">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
             </StackPanel>
 
             <Label Grid.Row="1" x:Name="lblEvents" Content="Events:" FontWeight="Bold" FontSize="18" HorizontalAlignment="Left" Margin="10,207,0,10" Width="70" Grid.RowSpan="2" Foreground="White"/>
@@ -66,7 +72,15 @@
             </StackPanel>
 
             <Button Grid.Row="0" Grid.Column="0" x:Name="btnBackToMainMenu" Content="Back To Main Menu" HorizontalAlignment="Left" Margin="10,10,0,0" 
-            VerticalAlignment="Top" Height="34" Width="132" BorderBrush="Blue" Background="#FF87D2DC" Click="btnBackToMainMenu_Click" FontWeight="Bold"/>
+                    VerticalAlignment="Top" Height="34" Width="132" BorderBrush="Blue" Background="#FF87D2DC" Click="btnBackToMainMenu_Click" FontWeight="Bold">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
     </ScrollViewer>
 </Window>
