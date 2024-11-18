@@ -144,7 +144,7 @@
                     </ControlTemplate>
                 </Button.Template>
                 <Button.ToolTip>
-                    <ToolTip Content="Button to get urgent service requests." />
+                    <ToolTip Content="Button to get the most urgent service requests." />
                 </Button.ToolTip>
             </Button>
 

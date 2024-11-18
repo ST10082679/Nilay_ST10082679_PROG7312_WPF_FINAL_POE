@@ -154,6 +154,7 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
                     string message = $"UUID: {serviceRequest.UUID}\n" +
                                      $"Location: {serviceRequest.Location}\n" +
                                      $"Priority: {serviceRequest.Priority}\n" +
+                                     $"Status: {serviceRequest.Status}\n" +
                                      $"Name: {serviceRequest.Name}";
 
                     // Display the details in a message box
