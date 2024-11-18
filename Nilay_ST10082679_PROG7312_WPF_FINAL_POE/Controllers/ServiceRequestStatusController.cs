@@ -31,34 +31,39 @@ namespace Nilay_ST10082679_PROG7312_WPF_FINAL_POE
             // Sample data insertion
             // Generated from chat 
             // The UUID is auto generated and the rest of the data is random
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Hatfield, Pretoria", "Pending", 10, "Repair water main"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Bryanston, Johannesburg", "In Progress", 23, "Upgrade electrical substation"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Morningside, Durban", "Pending", 35, "Replace street signs"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sea Point, Cape Town", "Completed", 47, "Fix broken benches"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Hatfield, Pretoria", "In Progress", 8, "Install public Wi-Fi"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sea Point, Cape Town", "Pending", 19, "Repair sidewalk cracks"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "Completed", 29, "Trim overgrown trees"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Westville, Durban", "In Progress", 11, "Repaint pedestrian crossings"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rondebosch, Cape Town", "Pending", 39, "Fix streetlights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Kempton Park, Johannesburg", "Completed", 15, "Clean illegal dumping site"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "In Progress", 42, "Repair park equipment"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Stellenbosch, Cape Town", "Pending", 9, "Remove invasive plants"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "La Lucia, Durban", "Completed", 22, "Clear storm debris"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Fourways, Johannesburg", "In Progress", 13, "Install speed bumps"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Durban North, Durban", "Pending", 27, "Fix leaking fire hydrant"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Claremont, Cape Town", "Completed", 50, "Replace park fences"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Fourways, Johannesburg", "In Progress", 44, "Repair traffic lights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Ballito, Durban", "Pending", 33, "Upgrade drainage system"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Somerset West, Cape Town", "Completed", 20, "Paint public benches"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Randburg, Johannesburg", "In Progress", 14, "Fill potholes"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Durban CBD, Durban", "Pending", 26, "Replace damaged traffic signs"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Constantia, Cape Town", "Completed", 12, "Prune municipal gardens"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Bryanston, Johannesburg", "In Progress", 31, "Resurface road"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Durban North, Durban", "Pending", 21, "Repaint street lines"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Lynnwood, Pretoria", "Completed", 5, "Repair broken swings"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "Pending", 51, "Fix municipal building leak"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 1, "Repair stormwater drain"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 2, "Fix streetlights"));
+            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 6, "Repair potholes"));
             InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 12, "Fix drainage"));
             InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 34, "Repair potholes"));
             InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 45, "Clean park"));
             InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 78, "Install streetlights"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "In Progress", 22, "Repair water pipeline"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 15, "Trim overgrown trees"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Langenhoven Park, Bloemfontein", "Pending", 56, "Clear blocked sewer"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sterpark, Polokwane", "In Progress", 89, "Repair electrical outage"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Cashan, Rustenburg", "Completed", 14, "Remove illegal dumping"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Green Point, Cape Town", "Pending", 33, "Repair road signage"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Melville, Johannesburg", "In Progress", 67, "Install speed bumps"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Dobsonville, Soweto", "Completed", 81, "Fix streetlights"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Pending", 3, "Repair stormwater drain"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Morningside, Durban", "In Progress", 19, "Clean illegal graffiti"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Completed", 91, "Replace manhole covers"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sonheuwel, Nelspruit", "Pending", 48, "Remove fallen tree"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Heather Park, George", "In Progress", 25, "Fix broken water main"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "Completed", 5, "Repair park benches"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Monument Heights, Kimberley", "Pending", 84, "Fix public restroom plumbing"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Three Rivers, Vereeniging", "In Progress", 66, "Replace damaged curb"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Glenwood, Durban", "Completed", 73, "Clean up flooding debris"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 20, "Repair broken traffic light"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Nahoon, East London", "In Progress", 35, "Install new waste bins"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Summerstrand, Port Elizabeth", "Completed", 92, "Fix playground equipment"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Rosebank, Johannesburg", "Pending", 50, "Fix municipal building leak"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Clifton, Cape Town", "In Progress", 1, "Repair stormwater drain"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Umhlanga, Durban", "Completed", 2, "Fix streetlights"));
-            InsertRequest(new ServiceRequest(Guid.NewGuid().ToString(), "Sandton, Johannesburg", "Pending", 6, "Repair potholes"));
         }
         //--------------------------------------------------------------------------------------//
         public void InsertRequest(ServiceRequest request)
